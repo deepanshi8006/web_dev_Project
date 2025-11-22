@@ -65,6 +65,7 @@ header.shadow{
 
 }
 .header-icon{
+    position: relative;
     font-size: 22px;
     cursor:pointer;
     z-index:10000;
@@ -111,6 +112,23 @@ header.shadow{
     font-size: 1rem;
     font-weight: 500;
 }
+.cart-wrapper {
+    position: relative;
+}
+#cart-count {
+    position: absolute;
+    top: -8px;   
+    right: -10px; 
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px 6px;
+}
+    #cart-icon {
+    position: relative;
+}
+
 .home{
     color:var(--second-color);
     width:100%;
@@ -170,6 +188,94 @@ header.shadow{
     font-size:1.8rem;
     text-transform: uppercase;
 }
+.brand-title {
+      display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: #bc9667;  
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    font-size: 32px;
+    font-weight: 600;
+    color:#333;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.brand-title:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.brand-logo-wrapper {
+    background: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.brand-name {
+    letter-spacing: 2px;
+}
+.brand-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.brand-heading {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.brand-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.brand-box {
+    width: 200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.brand-box h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.brand-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 .product-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(280px,auto));
@@ -409,6 +515,53 @@ header.shadow{
 .billing .btn:hover {
     background-color: #c9ba96;
     color: #333333;
+}
+#reviewBox {
+    width: 100%;              
+    max-width: 750px;         
+    margin: 50px auto;        
+    padding: 25px;
+    border: 2px solid #5c3a21;
+    border-radius: 10px;
+    background-color: #d2b48c;
+    box-sizing: border-box;
+}
+
+#reviewBox h2 {
+    text-align: center;
+}
+
+#reviewBox input,
+#reviewBox textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#reviewBox button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c3a21;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+@media (max-width: 750px) {
+    #reviewBox {
+        padding: 18px;
+        margin: 30px 15px;   
+    }
+
+    #reviewBox button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
 }
 .customers-container{
     display: grid;

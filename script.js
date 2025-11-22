@@ -76,3 +76,39 @@ function getPrice(item) {
             return 0;
     }
 }
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+updateCartCount();
+
+
+document.querySelectorAll(".add-to-cart").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const name = this.dataset.name;
+        const price = this.dataset.price;
+        const image = this.dataset.image;
+
+        const product = { name, price, image, quantity: 1 };
+
+     
+        const exists = cart.find(item => item.name === name);
+
+        if (exists) {
+            exists.quantity += 1;
+        } else {
+            cart.push(product);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+    });
+});
+
+
+function updateCartCount() {
+    const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    document.getElementById("cart-count").innerText = cartCount;
+}
+
+
